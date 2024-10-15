@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id "io.freefair.lombok" version "8.6"
+    //id "io.freefair.lombok" version "8.10"
 }
 
 group 'ru.netology'
@@ -15,11 +15,14 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter', version: '5.11.0'
     testImplementation 'io.rest-assured:rest-assured:4.3.0'
     testImplementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.github.javafaker:javafaker:1.0.2'
     testImplementation 'com.codeborne:selenide:6.17.2'
+    testAnnotationProcessor'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+
 }
 
 test {
